@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-
+import LandingPage from "./components/landing/landing";
 
 import { getUserData } from './utils/data_helpers'
 
@@ -23,20 +23,18 @@ function App() {
 
   return (
     <div className="App">
-      <h1>CAMKO</h1>
-      <label htmlFor='username'></label>
-      <input
-      id='username'
-      name='username'
-      type='text'
-      placeholder='put your github username'
-      value={username}
-      onChange={event => setUsername(event.target.value)}
+    <LandingPage 
+      username={username} 
+      fighter={fighter} 
+      setUsername={setUsername}
+      setFighter={setFighter} 
       />
-      {/* {fighter && !data && <Error message="The username doesn't exisst!"/>} */}
-      <button onClick={() => setFighter(!fighter)}>Generate Fighter!</button>
+      
+     
       {/* {fighter && data && <Fighter />}
       {result && <Result /> } */}
+      {/* {fighter && !data && <Error message="The username doesn't exisst!"/>} */}
+
     </div>
   );
 }
