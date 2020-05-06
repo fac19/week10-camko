@@ -5,7 +5,7 @@ const LandingPage = ({ username, fighter, setFighter, setUsername }) => {
   return (
     <section>
       <h1>CAMKO</h1>
-      <label htmlFor="username"></label>
+      <label htmlFor="username">Username: </label>
       <input
         id="username"
         name="username"
