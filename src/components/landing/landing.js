@@ -4,7 +4,7 @@ const LandingPage = ({ username, fighter, setFighter, setUsername }) => {
   
   return (
     <section>
-      <h1>CAMKO</h1>
+      <img src={require('./git-fighter.png')} alt='Git fighter game title'/>
       <label htmlFor="username">Username: </label>
       <input
         id="username"
