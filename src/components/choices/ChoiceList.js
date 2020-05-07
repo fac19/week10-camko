@@ -3,12 +3,12 @@ import {userData} from '../../utils/usernames'
 import Fighter from '../fighter/fighter'
 
 
-const ChoiceList = props => {
-    
-  return (
+const ChoiceList = ({data, setOpponent}) => {
+    return (
       <ul>
-    { userData ? userData.map((data) => <Fighter key={data.id} data={data} />) : <h1>No results found!</h1>}
-    </ul>
+          <Fighter data={data} setOpponent={setOpponent}/>
+          { userData ? userData.map((data) => <Fighter key={data.id} data={data} setOpponent={setOpponent} />) : <h1>No results found!</h1>}
+      </ul>
   )
 }
 

@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Fighter = ({data}) => {
+const Fighter = ({ data, setOpponent }) => {
     if(!data) return <h1>Loading...</h1>
-    
     const { avatar_url, login, name, public_repos, followers, following } = data
  
     return (
-     <article>
+        // github.com/oliverjam/css-pseudo-element-challenge 
+     <article onClick={() => setOpponent(data)}>
           <header>
               <img src={avatar_url} alt={`{login} the fighter!`}/>
                <h1>{name ? name : login}</h1>
@@ -16,7 +16,6 @@ const Fighter = ({data}) => {
               <li>Defence: {followers}</li>
               <li>Intelligence: {following}</li>
           </ul>
-    
       </article>
 
     )

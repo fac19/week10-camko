@@ -1,20 +1,25 @@
 import React from "react";
 
-const LandingPage = ({ username, fighter, setFighter, setUsername }) => {
+
+const LandingPage = ({ username, setUsername }) => {
   
   return (
     <section>
       <img src={require('./git-fighter.png')} alt='Git fighter game title'/>
-      <label htmlFor="username">Username: </label>
-      <input
-        id="username"
-        name="username"
-        type="text"
-        placeholder="put your github username"
-        value={username}
-        onChange={(event) => setUsername(event.target.value)}
-      />
-      <button onClick={() => setFighter(!fighter)}>Generate Fighter!</button>
+      <form onSubmit={(event) => {
+        event.preventDefault()
+        return setUsername(event.target.username.value)
+        }}>
+
+        <label htmlFor="username">Username: </label>
+        <input
+          id="username"
+          name="username"
+          type="text"
+          placeholder="put your github username"
+        />
+        <button>Generate Fighter!</button>
+      </form>
     </section>
   );
 };

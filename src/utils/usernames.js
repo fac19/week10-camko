@@ -21,11 +21,11 @@ const usernames = [
 ]
 
 const userData = [
- 
+  
 ]
 
 usernames.map((user) => {
-  getUserData(user).then((data) => userData.push(data))
+  return getUserData(user).then((data) => userData.push(data))
 })
 
 export {usernames, userData}

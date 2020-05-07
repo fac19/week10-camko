@@ -2,41 +2,46 @@ import React from 'react';
 import './App.css';
 import LandingPage from "./components/landing/landing";
 import Fighter from './components/fighter/fighter'
-import { userData } from "./utils/usernames"
+// import { userData } from "./utils/usernames"
 import { getUserData } from './utils/data_helpers'
 import ChoiceList from './components/choices/ChoiceList'
+
 function App() {
   // fetched data
   const [data, setData] = React.useState(null)
   // provided username
   const [username, setUsername] = React.useState('')
   // does username exist?
-  const [fighter, setFighter] = React.useState(false)
+  // const [fighter, setFighter] = React.useState(false)
   // fight mode
   const [button, setButton] = React.useState('')
+  // oponentsData
+  const [opponent, setOpponent] = React.useState(null)
+  console.log(opponent)
 
   React.useEffect(() => {
     getUserData(username)
       .then(data => {
         return setData(data)
       })
-  }, [fighter])
+      .catch(err => {
+        console.log(err)
+      })
+  }, [username])
 
   return (
     <div className="App">
-    {!fighter && <LandingPage 
+    {!username && <LandingPage 
       username={username} 
-      fighter={fighter} 
       setUsername={setUsername}
-      setFighter={setFighter} 
       />}
       
       {data && !button ? 
         (<div>
           <Fighter
             data={data}
-            button={button}
-            setButton={setButton}
+            opponent={opponent}
+            setOpponent={setOpponent} 
           /> 
           <button onClick={() => setButton("random")}>Random fight!</button>
           <button onClick={() => setButton('choice')}>Choose your fight!</button>
@@ -44,9 +49,11 @@ function App() {
           ) : null}
 
       {button === 'random' ? <h1>Random</h1> : null}
-      {button === 'choice' ? <ChoiceList/> : null}
+      {button === 'choice' && !opponent ? <ChoiceList setOpponent={setOpponent} data={data}/> : null}
       {button === 'boss' ? <h1>Boss</h1> : null}   
 
+
+       {opponent !== null ? <h1>FIGHT IS ON</h1> : null}   
     </div>
   );
 }

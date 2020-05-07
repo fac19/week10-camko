@@ -1,4 +1,5 @@
-import {token} from './token'
+const token = process.env.REACT_APP_GITHUB_TOKEN
+console.log(token)
 
 
 const checkResponse = response => {
