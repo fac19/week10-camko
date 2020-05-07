@@ -15,6 +15,7 @@ section {
     background: -webkit-linear-gradient(red, orange, yellow);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
 }
 
 form {

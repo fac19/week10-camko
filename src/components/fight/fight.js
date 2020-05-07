@@ -6,9 +6,19 @@ const Fight = ({ data, opponent, setButton, setOpponent, username }) => {
   return (
     <main>
       <header className="fight-header">
-        <Fighter data={data} username={username}  />
+        <Fighter
+          data={data}
+          username={username}
+          opponent={opponent}
+          setOpponent={opponent}
+        />
         <h1 className="versus">VS.</h1>
-        <Fighter data={opponent} username={username} />
+        <Fighter
+          data={opponent}
+          username={username}
+          opponent={opponent}
+          setOpponent={opponent}
+        />
       </header>
       <section className="fight-mode-buttons-section">
         <button
