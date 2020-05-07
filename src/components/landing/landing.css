@@ -1,0 +1,55 @@
+html {
+    background-color: lightblue;
+}
+
+section {
+    margin-top: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.landing-title {
+    font-size: 4rem;
+    background: -webkit-linear-gradient(red, orange, yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-element {
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+#username {
+  height: 2rem;
+  font-size: 0.75rem;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: left;
+  font-family: "Press Start 2P", cursive, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#start {
+  border-radius: 8px;
+  font-family: "Press Start 2P", cursive, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.25rem;
+  padding: 1rem;
+  background-color: lightgrey;
+}

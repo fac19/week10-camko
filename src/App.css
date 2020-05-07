@@ -1,2 +1,25 @@
+.fightButton {
+    border-radius: 8px;
+    font-family: "Press Start 2P", cursive, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+      "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1.25rem;
+    padding: 1rem;
+    background-color: lightgrey;
+    margin-left: 1rem
 
+}
+.fightButton:hover {
+  opacity: 1;
+  background-color: rgb(175, 174, 174);
+}
 
+.fightButton-section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import './fighter.css'
 
 const Fighter = ({ data, opponent, setOpponent, username }) => {
     if(!data) return <h1>Loading...</h1>
@@ -7,14 +8,14 @@ const Fighter = ({ data, opponent, setOpponent, username }) => {
     return (
         // github.com/oliverjam/css-pseudo-element-challenge 
      <article onClick={!opponent && username !== data.login ? () => setOpponent(data) : null}>
-          <header>
-              <img src={avatar_url} alt={`{login} the fighter!`}/>
+          <header className='cardHeader'>
+              <img className='fighter-image' src={avatar_url} alt={`{login} the fighter!`}/>
                <h1>{name ? name : login}</h1>
           </header>
           <ul className='stats-list'>
               <li>Attack: {public_repos}</li>
               <li>Defence: {followers}</li>
-              <li>Intelligence: {following}</li>
+              <li>Magic: {following}</li>
           </ul>
       </article>
 
