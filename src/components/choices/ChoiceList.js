@@ -8,7 +8,7 @@ const ChoiceList = ({data, setOpponent, opponent, username}) => {
     return (
       <ul>
           <Fighter data={data} setOpponent={setOpponent} opponent={opponent} username={username}/>
-          { userData ? userData.map((data) => <Fighter key={data.id} data={data} setOpponent={setOpponent} username={username} />) : <h1>No results found!</h1>}
+          { userData ? userData.map((user) => user.login !== username ? <Fighter key={user.id} data={user} setOpponent={setOpponent} username={username} /> : null) : <h1>No results found!</h1>}
       </ul>
   )
 }

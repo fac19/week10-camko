@@ -8,7 +8,7 @@ const Fight = ({data, opponent, setButton, setOpponent}) => {
             <Fighter data={data} opponent={opponent} />
             <h1 className='versus'>VS.</h1>
             <Fighter data={opponent} opponent={opponent}/>
-            <button>FIGHT!</button>
+            <button onClick={() => setButton('fightMode')}>FIGHT!</button>
             <button onClick={() => {
             setButton('') 
             setOpponent(null)
@@ -16,6 +16,5 @@ const Fight = ({data, opponent, setButton, setOpponent}) => {
         </main>
     )
 }
-
 
 export default Fight
