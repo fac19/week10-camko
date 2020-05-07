@@ -4,6 +4,7 @@ import Fighter from '../fighter/fighter'
 
 
 const ChoiceList = ({data, setOpponent, opponent, username}) => {
+  console.log(data)
     return (
       <ul>
           <Fighter data={data} setOpponent={setOpponent} opponent={opponent} username={username}/>

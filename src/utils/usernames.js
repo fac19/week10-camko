@@ -28,4 +28,9 @@ usernames.map((user) => {
   return getUserData(user).then((data) => userData.push(data))
 })
 
-export {usernames, userData}
+function getRandomInteger(min, max) {
+  const randomInt = Math.floor(Math.random() * (max - min + 1) ) + min;
+  return userData[randomInt]
+}
+
+export {usernames, userData, getRandomInteger}

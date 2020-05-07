@@ -6,6 +6,7 @@ import Fight from './components/fight/fight'
 // import { userData } from "./utils/usernames"
 import { getUserData } from './utils/data_helpers'
 import ChoiceList from './components/choices/ChoiceList'
+import { getRandomInteger } from './utils/usernames'
 
 function App() {
   // fetched data
@@ -50,7 +51,7 @@ function App() {
           <button onClick={() => setButton('boss')}>Boss fight!</button></div>
           ) : null}
 
-      {button === 'random' ? <h1>Random</h1> : null}
+      {button === 'random' ? <Fight data={data} opponent={getRandomInteger(0, 16)} setOpponent={setOpponent} username={username} setButton={setButton} /> : null}
       {button === 'choice' && !opponent ? <ChoiceList opponent={opponent} setOpponent={setOpponent} data={data} username={username}/> : null}
       {button === 'boss' ? <h1>Boss</h1> : null}   
 
