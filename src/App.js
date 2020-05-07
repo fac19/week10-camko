@@ -20,7 +20,6 @@ function App() {
   // oponentsData
   const [opponent, setOpponent] = React.useState(null)
   console.log(opponent)
-
   React.useEffect(() => {
     getUserData(username)
       .then(data => {
@@ -46,17 +45,22 @@ function App() {
             setOpponent={setOpponent} 
             username={username}
           /> 
-          <button onClick={() => setButton("random")}>Random fight!</button>
+          <button onClick={() => {
+            setButton("random")
+            setOpponent(getRandomInteger(0, 16))
+          }}>Random fight!</button>
           <button onClick={() => setButton('choice')}>Choose your fight!</button>
-          <button onClick={() => setButton('boss')}>Boss fight!</button></div>
+          <button onClick={() => {
+            setButton('boss') 
+            getUserData("oliverjam")
+              .then(data => setOpponent(data))
+              .catch(err => console.log(err))
+          }}>Boss fight!</button></div>
           ) : null}
 
-      {button === 'random' ? <Fight data={data} opponent={getRandomInteger(0, 16)} setOpponent={setOpponent} username={username} setButton={setButton} /> : null}
       {button === 'choice' && !opponent ? <ChoiceList opponent={opponent} setOpponent={setOpponent} data={data} username={username}/> : null}
-      {button === 'boss' ? <h1>Boss</h1> : null}   
 
-
-       {button && opponent !== null ? <Fight data={data} opponent={opponent} setOpponent={setOpponent} username={username} setButton={setButton} /> : null}   
+      {button && opponent !== null ? <Fight data={data} opponent={opponent} setOpponent={setOpponent} username={username} setButton={setButton} /> : null}   
     </div>
   );
 }
