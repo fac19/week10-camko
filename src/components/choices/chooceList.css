@@ -1,0 +1,15 @@
+.fighters-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.opponent-list container {
+  display: flex;
+
+}
+
+.opponent-list {
+  display: block;
+  width: 50px;
+}
+

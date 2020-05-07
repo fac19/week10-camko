@@ -1,0 +1,55 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fight-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.versus {
+  font-size: 3rem;
+  background: -webkit-linear-gradient(red, orange, yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 3rem;
+}
+
+.fight-mode-buttons-section {
+  display: flex;
+  flex-direction: row;
+  margin: 3rem;
+}
+
+.fight-mode-button {
+  border-radius: 8px;
+  font-family: "Press Start 2P", cursive, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.25rem;
+  padding: 1rem;
+  background-color: lightgrey;
+  margin-left: 1rem;
+}
+
+.fight-mode-button:hover {
+  opacity: 1;
+  background-color: rgb(175, 174, 174);
+}
+
+@media only screen and (max-width: 600px) {
+  .fight-header {
+    flex-direction: column;
+  }
+
+  .fight-mode-buttons-section {
+    flex-direction: row;
+  }
+}

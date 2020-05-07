@@ -4,19 +4,6 @@ body {
     align-items: center;
 }
 
-article {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-    align-items: center;
-    flex-direction: column;
-    background-color: lightblue;
-    border: 5px solid black;
-    border-radius: 5px;
-    width: 50%;
-    margin: 2rem auto;
-}
-
 .fighter-image {
     width: 300px;
     height: 300px;
@@ -28,17 +15,34 @@ article {
     align-items: center;
     flex-direction: column;
     border: 5px black;
-    margin-top: 10px;
+    margin: 10px;
     padding: 1rem;
     border: 3px solid black;
     border-radius: 7px;
+    overflow: wrap;
 }
 
 .stats-list {
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .stats-list > li {
   margin-top: 0.5rem;
   color: rgb(119, 0, 255)
+}
+
+.fighter-profile {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  align-items: center;
+  flex-direction: column;
+  background-color: lightblue;
+  border: 5px solid black;
+  border-radius: 5px;
+  margin: 2rem;
 }

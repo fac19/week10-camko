@@ -4,12 +4,13 @@ import './fighter.css'
 const Fighter = ({ data, opponent, setOpponent, username }) => {
     if(!data) return <h1>Loading...</h1>
     const { avatar_url, login, name, public_repos, followers, following } = data
+    console.log(username)
  
     return (
         // github.com/oliverjam/css-pseudo-element-challenge 
-     <article onClick={!opponent && username !== data.login ? () => setOpponent(data) : null}>
+     <article className={username === login ? "fighter-profile" : "opponent"} onClick={!opponent && username !== login ? () => setOpponent(data) : null}>
           <header className='cardHeader'>
-              <img className='fighter-image' src={avatar_url} alt={`{login} the fighter!`}/>
+              <img className={username === login ? 'fighter-image' : "opponent-image"} src={avatar_url} alt={`{login} the fighter!`}/>
                <h1>{name ? name : login}</h1>
           </header>
           <ul className='stats-list'>

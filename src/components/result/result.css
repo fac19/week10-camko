@@ -1,0 +1,14 @@
+.result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+    text-align: center;
+    /* padding: 1rem; */
+}
+
+.result-title {
+    width: 70%;
+    padding: 2rem;
+}

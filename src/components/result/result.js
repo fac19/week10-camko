@@ -1,4 +1,5 @@
 import React from 'react';
+import './result.css'
 
 const Result = ({data, setData, opponent, setButton, setOpponent}) => {
 
@@ -18,9 +19,9 @@ const Result = ({data, setData, opponent, setButton, setOpponent}) => {
     }, [])
 
     return (
-        <main>
-          <h1>{userPower > opponentPower ? "You are the winner and you gained 10 defence" : "You lost! You learn from your failures : +2 intelligence" }</h1>
-          <button onClick={() => {
+        <main className='result'>
+          <h1 className='result-title'>{userPower > opponentPower ? "You are the winner and you gained 10 defence" : "You lost! You learn from your failures : +2 intelligence" }</h1>
+          <button className='fightButton' onClick={() => {
             setButton('')
             setOpponent(null)
             }}>Prepare for new fight</button>
