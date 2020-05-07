@@ -55,7 +55,7 @@ function App() {
       {button === 'boss' ? <h1>Boss</h1> : null}   
 
 
-       {opponent !== null ? <Fight data={data} opponent={opponent} setOpponent={setOpponent} username={username} /> : null}   
+       {button && opponent !== null ? <Fight data={data} opponent={opponent} setOpponent={setOpponent} username={username} setButton={setButton} /> : null}   
     </div>
   );
 }
