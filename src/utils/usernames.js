@@ -1,3 +1,5 @@
+import { getUserData } from "./data_helpers"
+
 const usernames = [
   "akomiqaia",
   "Albadylic",
@@ -18,4 +20,12 @@ const usernames = [
   "VatsKan"
 ]
 
-export default usernames
+const userData = [
+ 
+]
+
+usernames.map((user) => {
+  getUserData(user).then((data) => userData.push(data))
+})
+
+export {usernames, userData}

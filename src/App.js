@@ -2,9 +2,9 @@ import React from 'react';
 import './App.css';
 import LandingPage from "./components/landing/landing";
 import Fighter from './components/fighter/fighter'
-
+import { userData } from "./utils/usernames"
 import { getUserData } from './utils/data_helpers'
-
+import ChoiceList from './components/choices/ChoiceList'
 function App() {
   // fetched data
   const [data, setData] = React.useState(null)
@@ -14,15 +14,13 @@ function App() {
   const [fighter, setFighter] = React.useState(false)
   // fight mode
   const [button, setButton] = React.useState('')
-  
+
   React.useEffect(() => {
     getUserData(username)
       .then(data => {
-        console.log(data)
         return setData(data)
       })
   }, [fighter])
-
 
   return (
     <div className="App">
@@ -33,14 +31,20 @@ function App() {
       setFighter={setFighter} 
       />}
       
-      {data && !button ? <Fighter
-        data={data}
-        button={button}
-        setButton={setButton}
-      /> : null}
+      {data && !button ? 
+        (<div>
+          <Fighter
+            data={data}
+            button={button}
+            setButton={setButton}
+          /> 
+          <button onClick={() => setButton("random")}>Random fight!</button>
+          <button onClick={() => setButton('choice')}>Choose your fight!</button>
+          <button onClick={() => setButton('boss')}>Boss fight!</button></div>
+          ) : null}
 
       {button === 'random' ? <h1>Random</h1> : null}
-      {button === 'choice' ? <h1>Choice</h1> : null}
+      {button === 'choice' ? <ChoiceList/> : null}
       {button === 'boss' ? <h1>Boss</h1> : null}   
 
     </div>
