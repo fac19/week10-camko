@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import LandingPage from "./components/landing/landing";
 import Fighter from './components/fighter/fighter'
+import Fight from './components/fight/fight'
 // import { userData } from "./utils/usernames"
 import { getUserData } from './utils/data_helpers'
 import ChoiceList from './components/choices/ChoiceList'
@@ -42,6 +43,7 @@ function App() {
             data={data}
             opponent={opponent}
             setOpponent={setOpponent} 
+            username={username}
           /> 
           <button onClick={() => setButton("random")}>Random fight!</button>
           <button onClick={() => setButton('choice')}>Choose your fight!</button>
@@ -49,11 +51,11 @@ function App() {
           ) : null}
 
       {button === 'random' ? <h1>Random</h1> : null}
-      {button === 'choice' && !opponent ? <ChoiceList setOpponent={setOpponent} data={data}/> : null}
+      {button === 'choice' && !opponent ? <ChoiceList opponent={opponent} setOpponent={setOpponent} data={data} username={username}/> : null}
       {button === 'boss' ? <h1>Boss</h1> : null}   
 
 
-       {opponent !== null ? <h1>FIGHT IS ON</h1> : null}   
+       {opponent !== null ? <Fight data={data} opponent={opponent} setOpponent={setOpponent} username={username} /> : null}   
     </div>
   );
 }
