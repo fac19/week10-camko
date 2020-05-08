@@ -21,7 +21,7 @@ const Fighter = ({ data, opponent, setOpponent, username }) => {
           alt={`{login} the fighter!`}
         />
       </header>
-        <h1 className='cardTitle'>{name && name !== 'Giovanna L R T Aveiro' ? name : login}</h1>
+        <h2 className='cardTitle'>{name && name !== 'Giovanna L R T Aveiro' ? name : login}</h2>
       <ul className="stats-list">
         <li>Attack: {public_repos}</li>
         <li>Defence: {followers}</li>

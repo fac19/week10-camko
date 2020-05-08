@@ -57,7 +57,7 @@ function App() {
       )}
 
       {data && !button ? (
-        <div>
+        <div className='fighter-container'>
           <Fighter
             data={data}
             opponent={opponent}
