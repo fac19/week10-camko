@@ -9,8 +9,8 @@ import { getUserData } from "./utils/data_helpers";
 import ChoiceList from "./components/choices/ChoiceList";
 import { getRandomInteger } from "./utils/usernames";
 
-import fightSound from "./utils/fight.mp3"
-import menuSound from "./utils/menu.mp3"
+import fightSound from "./assets/fight.mp3"
+import menuSound from "./assets/menu.mp3"
 
 function App() {
   // fetched data
@@ -20,7 +20,7 @@ function App() {
   // does username exist?
   // const [fighter, setFighter] = React.useState(false)
   // fight mode
-  const [button, setButton] = React.useState("");
+  const [gameMode, setGameMode] = React.useState("");
   // oponentsData
   const [opponent, setOpponent] = React.useState(null);
 
@@ -56,7 +56,7 @@ function App() {
         <LandingPage username={username} setUsername={setUsername} />
       )}
 
-      {data && !button ? (
+      {data && !gameMode ? (
         <div className='fighter-container'>
           <Fighter
             data={data}
@@ -67,19 +67,19 @@ function App() {
           <section className='fightButton-section'>
           <button className="fightButton"
             onClick={() => {
-              setButton("random");
+              setGameMode("random");
               setOpponent(getRandomInteger(0, 16));
             }}
           >
             Random fight!
           </button>
           <button className="fightButton"
-          onClick={() => setButton("choice")}>
+          onClick={() => setGameMode("choice")}>
             Choose your fight!
           </button>
           <button className="fightButton"
             onClick={() => {
-              setButton("boss");
+              setGameMode("boss");
               getUserData("oliverjam")
                 .then((data) => setOpponent(data))
                 .catch((err) => console.log(err));
@@ -91,7 +91,7 @@ function App() {
         </div>
       ) : null}
 
-      {button === "choice" && !opponent ? (
+      {gameMode === "choice" && !opponent ? (
         <ChoiceList
           opponent={opponent}
           setOpponent={setOpponent}
@@ -100,22 +100,22 @@ function App() {
         />
       ) : null}
 
-      {button && button !== 'fightMode' && opponent !== null ? (
+      {gameMode && gameMode !== 'fightMode' && opponent !== null ? (
         <Fight
           data={data}
           opponent={opponent}
           setOpponent={setOpponent}
           username={username}
-          setButton={setButton}
+          setGameMode={setGameMode}
         />
       ) : null}
 
-      {button === 'fightMode' ? (
+      {gameMode === 'fightMode' ? (
         <Result
         data={data}
         setData={setData}
         opponent={opponent}
-        setButton={setButton}
+        setGameMode={setGameMode}
         setOpponent={setOpponent}
         />
         

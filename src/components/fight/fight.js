@@ -2,7 +2,7 @@ import React from "react";
 import Fighter from "../fighter/fighter";
 import "./fight.css";
 
-const Fight = ({ data, opponent, setButton, setOpponent, username }) => {
+const Fight = ({ data, opponent, setGameMode, setOpponent, username }) => {
   return (
     <main>
       <header className="fight-header">
@@ -23,14 +23,14 @@ const Fight = ({ data, opponent, setButton, setOpponent, username }) => {
       <section className="fight-mode-buttons-section">
         <button
           className="fight-mode-button"
-          onClick={() => setButton("fightMode")}
+          onClick={() => setGameMode("fightMode")}
         >
           FIGHT!
         </button>
         <button
           className="fight-mode-button"
           onClick={() => {
-            setButton("");
+            setGameMode("");
             setOpponent(null);
           }}
         >

@@ -1,7 +1,7 @@
 import React from "react";
 import "./result.css";
 
-const Result = ({ data, setData, opponent, setButton, setOpponent }) => {
+const Result = ({ data, setData, opponent, setGameMode, setOpponent }) => {
   const { public_repos, followers, following } = data;
   const hero = { ...data };
   const userPower = public_repos + followers + following;
@@ -28,7 +28,7 @@ const Result = ({ data, setData, opponent, setButton, setOpponent }) => {
       <button
         className="fightButton"
         onClick={() => {
-          setButton("");
+          setGameMode("");
           setOpponent(null);
         }}
       >
