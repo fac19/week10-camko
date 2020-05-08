@@ -24,16 +24,21 @@ function App() {
   // oponentsData
   const [opponent, setOpponent] = React.useState(null);
 
+  const [err, setErr] = React.useState('')
+
   const [music, setMusic] = React.useState("menu")
 
   React.useEffect(() => {
+    if (username) {
     getUserData(username)
       .then((data) => {
-        return setData(data);
+          return setData(data);
       })
       .catch((err) => {
+        setErr(err)
         console.log(err);
       });
+    }
   }, [username]);
 
   // if (music === "menu") {
@@ -53,7 +58,7 @@ function App() {
   return (
     <div className="App">
       {!username && (
-        <LandingPage username={username} setUsername={setUsername} />
+        <LandingPage err={err} username={username} setUsername={setUsername} />
       )}
 
       {data && !gameMode ? (

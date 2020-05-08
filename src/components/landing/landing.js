@@ -2,7 +2,8 @@ import React from "react";
 import './landing.css'
 
 
-const LandingPage = ({ username, setUsername }) => {
+const LandingPage = ({ err, username, setUsername, data }) => {
+
   
   return (
     <section>
@@ -20,6 +21,7 @@ const LandingPage = ({ username, setUsername }) => {
           type="text"
           placeholder="Your github username..."
         />
+        {err ? <h3>{'User does not exist!'}</h3> : null}
         <button className='form-element' id='start'>Start Game!</button>
       </form>
     </section>

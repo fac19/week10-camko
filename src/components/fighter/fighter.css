@@ -41,9 +41,11 @@ body {
   margin-top: 1rem;
   align-items: center;
   flex-direction: column;
-  background-color: white;
-  border: 5px solid red;
-  border-radius: 5px;
+  background: -webkit-linear-gradient(red, orange, yellow);
+  -webkit-background-clip: border-box;
+  -webkit-text-fill-color: black;
+  border: 0px solid red;
+  border-radius: 8px;
   margin: 2rem;
   width: 40%;
 }

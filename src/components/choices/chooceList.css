@@ -27,10 +27,9 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 5px red;
   margin: 10px;
   padding: 1rem;
-  border: 3px solid red;
+  border: 1px solid black;
   border-radius: 7px;
   overflow: wrap;
 }
@@ -55,8 +54,10 @@ justify-content: center;
 margin-top: 1rem;
 align-items: center;
 flex-direction: column;
-background-color: white;
-border: 5px solid red;
-border-radius: 5px;
+background: -webkit-linear-gradient(yellow, orange, red);
+  -webkit-background-clip: border-box;
+  -webkit-text-fill-color: black;
+border: 0px solid blue;
+border-radius: 10px;
 margin: 2rem;
 }
