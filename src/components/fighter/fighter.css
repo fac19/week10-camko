@@ -32,7 +32,7 @@ body {
 
 .stats-list > li {
   margin-top: 0.5rem;
-  color: rgb(119, 0, 255)
+  color: white;
 }
 
 .fighter-profile {
@@ -41,8 +41,8 @@ body {
   margin-top: 1rem;
   align-items: center;
   flex-direction: column;
-  background-color: lightblue;
-  border: 5px solid black;
+  background-color: white;
+  border: 5px solid red;
   border-radius: 5px;
   margin: 2rem;
   width: 40%;

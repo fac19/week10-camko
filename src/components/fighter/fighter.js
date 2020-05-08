@@ -18,7 +18,7 @@ const Fighter = ({ data, opponent, setOpponent, username }) => {
         <img
           className={username === login ? "fighter-image" : "opponent-image"}
           src={avatar_url}
-          alt={`{login} the fighter!`}
+          alt={`${login} the fighter!`}
         />
       </header>
         <h2 className='cardTitle'>{name && name !== 'Giovanna L R T Aveiro' ? name : login}</h2>

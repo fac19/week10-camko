@@ -23,7 +23,7 @@ const Result = ({ data, setData, opponent, setGameMode, setOpponent }) => {
       <h1 className="result-title">
         {userPower > opponentPower
           ? "You are the winner and you gained 10 defence"
-          : "You lost! You learn from your failures : +2 intelligence"}
+          : "You lost! You learn from your failures : +2 magic"}
       </h1>
       <button
         className="fightButton"

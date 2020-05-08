@@ -11,4 +11,7 @@
 .result-title {
     width: 70%;
     padding: 2rem;
+  background: -webkit-linear-gradient(red, orange, yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

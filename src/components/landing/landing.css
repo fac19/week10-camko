@@ -1,5 +1,5 @@
 html {
-    background-color: lightblue;
+    background-color: black;
 }
 
 section {
@@ -28,6 +28,12 @@ form {
 .form-element {
   margin: 1rem;
   font-size: 2rem;
+}
+
+#landing-username {
+  background: -webkit-linear-gradient(red, orange, yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #username {

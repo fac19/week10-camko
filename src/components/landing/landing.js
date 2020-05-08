@@ -13,7 +13,7 @@ const LandingPage = ({ username, setUsername }) => {
         return setUsername(event.target.username.value)
         }}>
 
-        <label className='form-element' htmlFor="username">Username: </label>
+        <label className='form-element' id='landing-username' htmlFor="username">Username: </label>
         <input
           id="username"
           name="username"
