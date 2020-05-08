@@ -21,7 +21,7 @@ const LandingPage = ({ err, username, setUsername, data }) => {
           type="text"
           placeholder="Your github username..."
         />
-        {err ? <h3>{'User does not exist!'}</h3> : null}
+        {err ? <h3 className='errorMessage'>{'User does not exist!'}</h3> : null}
         <button className='form-element' id='start'>Start Game!</button>
       </form>
     </section>

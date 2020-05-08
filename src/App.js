@@ -36,6 +36,7 @@ function App() {
       })
       .catch((err) => {
         setErr(err)
+        setUsername('')
         console.log(err);
       });
     }
