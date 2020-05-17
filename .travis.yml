@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "10"
+cache: npm
+script:
+  - echo 'Build starts!!'
+  - echo 'Installing Deps!'
+  - npm
+  - echo 'Testing!'
+  
